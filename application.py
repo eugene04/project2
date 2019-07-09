@@ -8,14 +8,14 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
 
-@app.route("/")
+@app.route("/" ,methods = ['GET','POST'])
 def index():
     return render_template('index.html')
 
-@socketio.on('send message')
-def message(message):
-    data=['data']
-    emit('new message',{'data':data}, broadcast=True)
+@socketio.on('new_message')
+def message(data):
+    msg=data['msg']
+    emit('new message',{'msg':msg}, broadcast=True)
 
 
 
