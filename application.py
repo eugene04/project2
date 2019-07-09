@@ -14,8 +14,7 @@ def index():
 
 @socketio.on('new_message')
 def message(data):
-    msg=data['msg']
-    emit('new message',{'msg':msg}, broadcast=True)
+    emit('new message',data, broadcast=True)
 
 
 
