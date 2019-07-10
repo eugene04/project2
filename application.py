@@ -12,9 +12,10 @@ socketio = SocketIO(app)
 def index():
     return render_template('index.html')
 
-@socketio.on('new_message')
+@socketio.on('send message')
 def message(data):
-    emit('new message',data, broadcast=True)
+    chat=data['chat']
+    emit('new message',{"chat":chat}, broadcast=True)
 
 
 

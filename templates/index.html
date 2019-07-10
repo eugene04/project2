@@ -2,14 +2,13 @@
 
 {% block content %}
 <h2>Messages</h2>
-<div class='message_holder'></div>
+<ul id='ul'></ul>
+<hr>
+<form action=''  method="POST">
+  
 
-<form id="new_message" action='' method='POST'>
+<input type="text" id='myMessage' placeholder="write message here">
 
-	<textarea name="message" placeholder="type message" rows="2" >
-		
-	</textarea>
-	<input id='msg' type="submit"/>	
 </form>
 
 {% endblock content %}
