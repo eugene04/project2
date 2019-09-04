@@ -1,7 +1,7 @@
 import os
 import requests
 
-from flask import Flask, render_template , Request
+from flask import Flask,jsonify, render_template , Request
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -14,9 +14,8 @@ def index():
     return render_template('index.html')
 
 @socketio.on('send message')
-def message(data):
-    chat=data['chat']
-    emit('new message',{"chat":chat}, broadcast=True)
+def msg(chat):
+    emit('new message',{'chat': chat}, broadcast=True)
 
 
 
