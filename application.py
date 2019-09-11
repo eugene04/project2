@@ -9,13 +9,15 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
 
+
 @app.route("/" ,methods = ['GET','POST'])
 def index():
     return render_template('index.html')
 
 @socketio.on('send message')
-def msg(chat):
-    emit('new message',{'chat': chat}, broadcast=True)
+def my_msg(chat , methods=['GET', 'POST']):
+    #chat = data["chat"]
+    emit('new message',chat, broadcast=True)
 
 
 

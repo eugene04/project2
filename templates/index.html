@@ -1,16 +1,31 @@
 {% extends "layout.html" %} 
+{% block content_left %}
+<h4 class="fas fa-h2    ">
+        Work groups
+</h4>
+    
+
+{% endblock content_left %}
+
 
 {% block content %}
 <h2>Messages</h2>
-<ul id="msg">
 
-</ul>
-<hr>
+
+<div id="msg">
+
+</div>
 <form id='new_msg' action="" method="POST">
   
 
-<input type="text" id='myMessage' name="message" placeholder="write message here" required>
-<input type="submit"/>
+<input type="text" id='myMessage' name="message" placeholder="write message here and press enter" required>
+
 </form>
 
+
 {% endblock content %}
+
+{% block content_right %}
+
+
+{% endblock content_right %}
