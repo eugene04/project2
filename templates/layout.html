@@ -49,6 +49,7 @@
     
         
           <div class= col-md-2>
+
               {% block content_left %}{% endblock content_left %}
             
         
@@ -56,14 +57,27 @@
       
 
            <div class= col-md-8>
- 
+
+                {% with messages = get_flashed_messages(with_categories = true) %}
+                {% if messages %}
+            
+                {% for category , message in messages  %}
+                <div class = "alert alert-{{category}}">
+                    {{message}}
+                </div>
+                {% endfor %}
+            
+                {% endif %}
+                {% endwith %}
+
+                {% block content_right %}{% endblock content_right %}
+              
       
   {% block content %}{% endblock content %}
 </div>
 
 <div class= col-md-2>
-    {% block content_right %}{% endblock content_right %}
-  
+    
 
 </div>
 
