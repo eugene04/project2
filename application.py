@@ -20,7 +20,7 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         flash(f'congratulations {form.username.data} your account has been successfully created', 'success')
-        return redirect (url_for('index')
+        return redirect (url_for('index'))
     
     return render_template('register.html',title = 'register',form=form)
     
