@@ -4,8 +4,12 @@ body {
   
 }
 
+
 #myMessage{
   position: absolute;
+}
+#more{
+  color: red;
 }
 #cont{
   margin-top: 3rem;

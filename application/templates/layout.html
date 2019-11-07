@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script> 
-    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    
      <!-- Font Awesome JS -->
      <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     
@@ -22,12 +22,12 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
         <div class="container-fluid">
          
          <!--Logo Here -->
          <div class="navbar-header">
-          <a href="#" class="navbar-brand">MeEtInG_pLaCe</a>
+          <a href="#" class="navbar-brand"><img src='static/seventh day.png'></a>
          </div>
       
          <!--Menu Items -->
@@ -50,13 +50,14 @@
         </div>
        </nav>
        
-
+    
     <div class="container-fluid" id='cont'>
     <div class="row">
     
     
         
           <div class= col-md-2>
+                
 
               {% block content_left %}{% endblock content_left %}
             
@@ -64,7 +65,7 @@
       </div>
       
 
-           <div class= col-md-8>
+           <div class= col-md-7>
 
                 {% with messages = get_flashed_messages(with_categories = true) %}
                 {% if messages %}
@@ -78,14 +79,14 @@
                 {% endif %}
                 {% endwith %}
 
-                {% block content_right %}{% endblock content_right %}
+                
               
       
   {% block content %}{% endblock content %}
 </div>
 
-<div class= col-md-2>
-    
+<div class= col-md-3>
+    {% block content_right %}{% endblock content_right %}  
 
 </div>
 
